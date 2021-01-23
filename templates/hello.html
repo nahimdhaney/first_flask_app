@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}{{super()}} Welcome {%endblock%}
+{% import 'macros.html' as macros %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block body %}
+  {% if user_ip %}
+  <h1>hello World platzi, tu IP es {{user_ip}}</h1>
+  <div class="container">
+    {{wtf.quick_form(login_form)}}
+  </div>
+{% else %}
+  <a href="{{ url_for('index') }}"> Ir a inicio </a>
+
+  {% endif %}
+  <ul>
+    {% for todo in todos %}
+     {{macros.render_todo(todo)}}
+    {% endfor %}
+    
+  </ul>
+{% endblock body %}
+
+
+
+<!-- \env\Scripts\activate.bat activate -->

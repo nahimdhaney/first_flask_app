@@ -1,0 +1,19 @@
+{%  extends "bootstrap/base.html" %}
+
+{% block head %}
+    {{super()}}
+    <title>{% block title %}
+        Flask Platzi
+      {% endblock  %}</title>
+    
+{% endblock head %}
+
+{% block body %}
+  {% block navbar %}
+    {% include 'navbar.html' %}
+  {% endblock navbar %}
+  {% block content %}
+    
+  {% endblock content %}
+{% endblock body %}
+</html>
